@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Contacto</th>
+            <th colspan="2">Accoes</th>
+        </tr>
+        {% for resultados in dados %}
+        <tr>
+            <td>{{resultados.0}}</td>
+            <td>{{resultados.1}}</td>
+            <td>{{resultados.2}}</td>
+            <td>{{resultados.3}}</td>
+            <td><a href="/editar/{{resultados.0}}">Editar</a> </td>
+            <td><a href="/delete/{{resultados.0}}">Apagar</a> </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <a href="/cadastro">Cadastrar novo</a>
+</body>
+</html>
